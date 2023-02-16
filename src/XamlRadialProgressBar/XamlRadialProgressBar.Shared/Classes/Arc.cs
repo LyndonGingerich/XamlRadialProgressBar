@@ -514,14 +514,15 @@ namespace XamlRadialProgressBar
                  startAngle <= maxAngle;
                  startAngle += ShapeModeStep)
             {
-                var a = (Direction == SweepDirection.Clockwise ? -1 : 1) * (startAngle + OriginRotationDegrees) * (Math.PI / 180);
+                var angle =
+                    (Direction == SweepDirection.Clockwise ? -1 : 1) * (startAngle + OriginRotationDegrees) * (Math.PI / 180);
 
                 var pt = new Point
                 {
-                    Y = centerPoint.Y - radiusY * Math.Sin(a), X = centerPoint.X + radiusX * Math.Cos(a)
+                    Y = centerPoint.Y - radiusY * Math.Sin(angle), X = centerPoint.X + radiusX * Math.Cos(angle)
                 };
-                var a2 = GetAngleBetweenPoints(pt, centerPoint);
-                dic.Add(new AngleData { StartPoint = pt, Angle = a2});
+                var startToCenterAngle = GetAngleBetweenPoints(pt, centerPoint);
+                dic.Add(new AngleData { StartPoint = pt, Angle = startToCenterAngle});
             }
 
             return dic;
