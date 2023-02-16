@@ -513,10 +513,8 @@ namespace XamlRadialProgressBar
             var radiusY = RenderSize.Height / 2;
             var centerPoint = new Point(radiusX, radiusY);
 
-            while (true)
+            while (startAngle <= maxAngle)
             {
-                if (startAngle > maxAngle)
-                    break;
                 var a = (Direction == SweepDirection.Clockwise ? -1 : 1) * (startAngle + OriginRotationDegrees) * (Math.PI / 180);
 
                 var pt = new Point
