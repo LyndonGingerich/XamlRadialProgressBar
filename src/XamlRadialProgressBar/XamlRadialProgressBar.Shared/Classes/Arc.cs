@@ -276,7 +276,7 @@ namespace XamlRadialProgressBar
                     {
                         await Dispatcher.InvokeAsync(() =>
                         {
-                            var value = (double) GetValue(EndAngleProperty) + 9;
+                            var value = EndAngle + 9;
                             if (_inEnd)
                             {
                                 _inEnd = false;
@@ -287,7 +287,7 @@ namespace XamlRadialProgressBar
                                 value = maxAngle;
                                 _inEnd = true;
                             }
-                            SetCurrentValue(EndAngleProperty, value);
+                            EndAngle = value;
                         });
                     }
                     catch
