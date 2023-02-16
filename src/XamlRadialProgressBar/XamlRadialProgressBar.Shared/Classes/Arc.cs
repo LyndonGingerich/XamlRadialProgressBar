@@ -572,19 +572,19 @@ namespace XamlRadialProgressBar
 
             var translatedAngle = angle + OriginRotationDegrees;
             var radAngle = translatedAngle * (Math.PI / 180);
-            var xr = (RenderSize.Width - width) / 2;
-            var yr = (RenderSize.Height - width) / 2;
+            var radiusX = (RenderSize.Width - width) / 2;
+            var radiusY = (RenderSize.Height - width) / 2;
 
-            var x = xr + xr * Math.Cos(radAngle);
-            var y = yr * Math.Sin(radAngle);
+            var x = radiusX + radiusX * Math.Cos(radAngle);
+            var y = radiusY * Math.Sin(radAngle);
 
             if (sweep == SweepDirection.Counterclockwise)
             {
-                y = yr - y;
+                y = radiusY - y;
             }
             else
             {
-                y = yr + y;
+                y = radiusY + y;
             }
 
             return new Point(x, y);
