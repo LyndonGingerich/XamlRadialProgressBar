@@ -10,6 +10,8 @@ namespace XamlRadialProgressBar
     public class Arc : Shape
     {
 
+        private const double maxAngle = 359.999;
+
         #region ShapeRotationAdjustment
         /// <summary>
         /// Gets or sets additional shape rotation adjustment in degrees for Shape mode. Default value is 0d.
@@ -283,7 +285,7 @@ namespace XamlRadialProgressBar
                             }
                             else if (value >= 360)
                             {
-                                value = 359.999;
+                                value = maxAngle;
                                 SetCurrentValue(EndAngleProperty, value);
                                 _inEnd = true;
                             }
@@ -506,7 +508,6 @@ namespace XamlRadialProgressBar
         private List<AngleData> GetAngleData()
         {
             var minAngle = Math.Min(StartAngle, EndAngle);
-            var maxAngle = 359.999;
 
             var dic = new List<AngleData>();
             var startAngle = minAngle;
@@ -550,7 +551,7 @@ namespace XamlRadialProgressBar
         {
             var width = ArcMode == ArcMode.Pie ? RenderSize.Width * .5 : StrokeThickness;
             var startPoint = PointAtAngle(full ? 0d : Math.Min(StartAngle, EndAngle), Direction);
-            var endPoint = PointAtAngle(full ? 359.999d : Math.Max(StartAngle, EndAngle), Direction);
+            var endPoint = PointAtAngle(full ? maxAngle : Math.Max(StartAngle, EndAngle), Direction);
 
             var arcSize = new Size(Math.Max(0, (RenderSize.Width - width) / 2),
                 Math.Max(0, (RenderSize.Height - width) / 2));
