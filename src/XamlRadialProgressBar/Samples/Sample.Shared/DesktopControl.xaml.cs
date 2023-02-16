@@ -90,9 +90,11 @@ namespace Sample.Shared
 
         private void UIElement_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            var info = new ProcessStartInfo();
-            info.FileName = "https://github.com/panthernet/XamlRadialProgressBar";
-            info.UseShellExecute = true;
+            var info = new ProcessStartInfo
+            {
+                FileName = "https://github.com/panthernet/XamlRadialProgressBar",
+                UseShellExecute = true
+            };
             Process.Start(info);
         }
     }
