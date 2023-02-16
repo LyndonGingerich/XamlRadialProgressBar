@@ -39,7 +39,7 @@ namespace Sample.Shared
 
         public DesktopControl()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             Loaded += (sender, args) => InitializeTimers();
         }
 
