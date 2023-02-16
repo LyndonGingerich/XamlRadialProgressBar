@@ -281,15 +281,13 @@ namespace XamlRadialProgressBar
                             {
                                 _inEnd = false;
                                 value = 0;
-                                SetCurrentValue(EndAngleProperty, value);
                             }
                             else if (value >= 360)
                             {
                                 value = maxAngle;
-                                SetCurrentValue(EndAngleProperty, value);
                                 _inEnd = true;
                             }
-                            else SetCurrentValue(EndAngleProperty, value);
+                            SetCurrentValue(EndAngleProperty, value);
                         });
                     }
                     catch
