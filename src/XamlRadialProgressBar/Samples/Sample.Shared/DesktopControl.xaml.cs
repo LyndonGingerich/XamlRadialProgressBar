@@ -40,7 +40,6 @@ namespace Sample.Shared
         public DesktopControl()
         {
             this.InitializeComponent();
-            DataContext = this;
             Loaded += (sender, args) => InitializeTimers();
         }
 

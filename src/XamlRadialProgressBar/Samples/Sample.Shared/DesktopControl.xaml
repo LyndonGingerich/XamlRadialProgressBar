@@ -9,7 +9,8 @@
 		UseLayoutRounding="True"
 		SnapsToDevicePixels="True"
     d:DesignHeight="300"
-    d:DesignWidth="400">
+    d:DesignWidth="400"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <Grid>
 	    <WrapPanel ItemWidth="150" ItemHeight="150">
