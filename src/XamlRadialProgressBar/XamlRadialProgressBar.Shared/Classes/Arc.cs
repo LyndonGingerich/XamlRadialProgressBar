@@ -21,7 +21,7 @@ namespace XamlRadialProgressBar
         }
 
         public static readonly DependencyProperty ShapeRotationAdjustmentProperty =
-            DependencyProperty.Register("ShapeRotationAdjustment", typeof(double), typeof(Arc),
+            DependencyProperty.Register(nameof(ShapeRotationAdjustment), typeof(double), typeof(Arc),
                 new UIPropertyMetadata(0d, UpdateArc));
         #endregion
 
@@ -36,7 +36,7 @@ namespace XamlRadialProgressBar
         }
 
         public static readonly DependencyProperty ShapeModeUseFadeProperty =
-            DependencyProperty.Register("ShapeModeUseFade", typeof(bool), typeof(Arc),
+            DependencyProperty.Register(nameof(ShapeModeUseFade), typeof(bool), typeof(Arc),
                 new UIPropertyMetadata(true, UpdateArc));
         #endregion
 
@@ -51,7 +51,7 @@ namespace XamlRadialProgressBar
         }
 
         public static readonly DependencyProperty ShapeModeShapeProperty =
-            DependencyProperty.Register("ShapeModeShape", typeof(ArcShape), typeof(Arc),
+            DependencyProperty.Register(nameof(ShapeModeShape), typeof(ArcShape), typeof(Arc),
                 new UIPropertyMetadata(ArcShape.Rectangle, UpdateArc));
         #endregion
 
@@ -66,7 +66,7 @@ namespace XamlRadialProgressBar
         }
 
         public static readonly DependencyProperty ShapeModeWidthProperty =
-            DependencyProperty.Register("ShapeModeWidth", typeof(double), typeof(Arc),
+            DependencyProperty.Register(nameof(ShapeModeWidth), typeof(double), typeof(Arc),
                 new UIPropertyMetadata(1d, UpdateArc));
         #endregion
 
@@ -81,13 +81,13 @@ namespace XamlRadialProgressBar
         }
 
         public static readonly DependencyProperty ShapeModeStepProperty =
-            DependencyProperty.Register("ShapeModeStep", typeof(int), typeof(Arc),
+            DependencyProperty.Register(nameof(ShapeModeStep), typeof(int), typeof(Arc),
                 new UIPropertyMetadata(3, UpdateArc));
         #endregion
 
         #region ArcMode
         public static readonly DependencyProperty ArcModeProperty =
-            DependencyProperty.Register("ArcMode", typeof(ArcMode), typeof(Arc),
+            DependencyProperty.Register(nameof(ArcMode), typeof(ArcMode), typeof(Arc),
                 new UIPropertyMetadata(ArcMode.Fill, UpdateArc));
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace XamlRadialProgressBar
 
         #region ProgressBorderThickness
         public static readonly DependencyProperty ProgressBorderThicknessProperty =
-            DependencyProperty.Register("ProgressBorderThickness", typeof(Thickness), typeof(Arc),
+            DependencyProperty.Register(nameof(ProgressBorderThickness), typeof(Thickness), typeof(Arc),
                 new UIPropertyMetadata(new Thickness(0), UpdatePen));
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace XamlRadialProgressBar
 
         #region ProgressFillBrush
         public static readonly DependencyProperty ProgressFillBrushProperty =
-            DependencyProperty.Register("ProgressFillBrush", typeof(Brush), typeof(Arc),
+            DependencyProperty.Register(nameof(ProgressFillBrush), typeof(Brush), typeof(Arc),
                 new UIPropertyMetadata(Brushes.White, UpdateFillBrush));
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace XamlRadialProgressBar
 
         #region ProgressBackgroundBrush
         public static readonly DependencyProperty ProgressBackgroundBrushProperty =
-            DependencyProperty.Register("ProgressBackgroundBrush", typeof(Brush), typeof(Arc),
+            DependencyProperty.Register(nameof(ProgressBackgroundBrush), typeof(Brush), typeof(Arc),
                 new UIPropertyMetadata(Brushes.Transparent, UpdateBgArc));
 
         private static void UpdateBgArc(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -153,7 +153,7 @@ namespace XamlRadialProgressBar
 
         #region ProgressBorderBrush
         public static readonly DependencyProperty ProgressBorderBrushProperty =
-            DependencyProperty.Register("ProgressBorderBrush", typeof(Brush), typeof(Arc),
+            DependencyProperty.Register(nameof(ProgressBorderBrush), typeof(Brush), typeof(Arc),
                 new UIPropertyMetadata(Brushes.Transparent, UpdatePen));
 
         private static void UpdatePen(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -181,7 +181,7 @@ namespace XamlRadialProgressBar
 
         // Using a DependencyProperty as the backing store for StartAngle.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty StartAngleProperty =
-            DependencyProperty.Register("StartAngle", typeof(double), typeof(Arc),
+            DependencyProperty.Register(nameof(StartAngle), typeof(double), typeof(Arc),
                 new UIPropertyMetadata(0.0, UpdateArc));
 
         public double EndAngle
@@ -192,7 +192,7 @@ namespace XamlRadialProgressBar
 
         // Using a DependencyProperty as the backing store for EndAngle.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty EndAngleProperty =
-            DependencyProperty.Register("EndAngle", typeof(double), typeof(Arc),
+            DependencyProperty.Register(nameof(EndAngle), typeof(double), typeof(Arc),
                 new UIPropertyMetadata(90.0, UpdateArc));
         #endregion
 
@@ -207,7 +207,7 @@ namespace XamlRadialProgressBar
         }
 
         public static readonly DependencyProperty DirectionProperty =
-            DependencyProperty.Register("Direction", typeof(SweepDirection), typeof(Arc),
+            DependencyProperty.Register(nameof(Direction), typeof(SweepDirection), typeof(Arc),
                 new UIPropertyMetadata(SweepDirection.Clockwise));
         #endregion
 
@@ -222,7 +222,7 @@ namespace XamlRadialProgressBar
         }
 
         public static readonly DependencyProperty OriginRotationDegreesProperty =
-            DependencyProperty.Register("OriginRotationDegrees", typeof(double), typeof(Arc),
+            DependencyProperty.Register(nameof(OriginRotationDegrees), typeof(double), typeof(Arc),
                 new UIPropertyMetadata(270d, UpdateArc));
 
         protected static void UpdateArc(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -242,7 +242,7 @@ namespace XamlRadialProgressBar
         }
 
         public static readonly DependencyProperty IsIndeterminateProperty =
-            DependencyProperty.Register("IsIndeterminate", typeof(bool), typeof(Arc),
+            DependencyProperty.Register(nameof(IsIndeterminate), typeof(bool), typeof(Arc),
                 new UIPropertyMetadata(true, UpdateIndeterminate));
 
         private static void UpdateIndeterminate(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -312,7 +312,7 @@ namespace XamlRadialProgressBar
         }
 
         public static readonly DependencyProperty IndeterminateSpeedRatioProperty =
-            DependencyProperty.Register("IndeterminateSpeedRatio", typeof(double), typeof(Arc),
+            DependencyProperty.Register(nameof(IndeterminateSpeedRatio), typeof(double), typeof(Arc),
                 new UIPropertyMetadata(1d, (o, args) => (o as Arc)?.UpdateIndeterminate()));
         #endregion
 
@@ -327,7 +327,7 @@ namespace XamlRadialProgressBar
         }
 
         public static readonly DependencyProperty ArcBackgroundWidthProperty =
-            DependencyProperty.Register("ArcBackgroundWidth", typeof(double), typeof(Arc),
+            DependencyProperty.Register(nameof(ArcBackgroundWidth), typeof(double), typeof(Arc),
                 new UIPropertyMetadata(0d, UpdateBgArc));
         #endregion
 
