@@ -506,12 +506,13 @@ namespace XamlRadialProgressBar
         private List<AngleData> GetAngleData()
         {
             var dic = new List<AngleData>();
-            var startAngle = Math.Min(StartAngle, EndAngle);
             var radiusX = RenderSize.Width / 2;
             var radiusY = RenderSize.Height / 2;
             var centerPoint = new Point(radiusX, radiusY);
 
-            while (startAngle <= maxAngle)
+            for (var startAngle = Math.Min(StartAngle, EndAngle);
+                 startAngle <= maxAngle;
+                 startAngle += ShapeModeStep)
             {
                 var a = (Direction == SweepDirection.Clockwise ? -1 : 1) * (startAngle + OriginRotationDegrees) * (Math.PI / 180);
 
@@ -521,7 +522,6 @@ namespace XamlRadialProgressBar
                 };
                 var a2 = GetAngleBetweenPoints(pt, centerPoint);
                 dic.Add(new AngleData { StartPoint = pt, Angle = a2});
-                startAngle += ShapeModeStep;
             }
 
             return dic;
