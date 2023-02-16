@@ -505,10 +505,8 @@ namespace XamlRadialProgressBar
         /// <returns></returns>
         private List<AngleData> GetAngleData()
         {
-            var minAngle = Math.Min(StartAngle, EndAngle);
-
             var dic = new List<AngleData>();
-            var startAngle = minAngle;
+            var startAngle = Math.Min(StartAngle, EndAngle);
             var radiusX = RenderSize.Width / 2;
             var radiusY = RenderSize.Height / 2;
             var centerPoint = new Point(radiusX, radiusY);
